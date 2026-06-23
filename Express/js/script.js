@@ -473,8 +473,8 @@ function init() {
     
     configurarEventos();
     
-    console.log('🐕 Hound Express - Sistema iniciado correctamente');
-    console.log(`📦 ${guias.length} guías cargadas`);
+    console.log(' Hound Express - Sistema iniciado correctamente');
+    console.log(` ${guias.length} guías cargadas`);
 }
 
 
