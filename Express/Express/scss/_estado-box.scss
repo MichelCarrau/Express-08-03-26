@@ -1,0 +1,47 @@
+.estado-box {
+  background-color: $bg-white;
+  border: 1px solid $border-color;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+
+  @include mobile {
+    padding: 10px;
+  }
+}
+
+.estado-general {
+  &__estado {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  &__item {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+}
+
+.buscar {
+  margin-top: 20px;
+
+  &__input {
+    @include input-styles;
+    margin-bottom: 10px;
+  }
+
+  &__button {
+    @include button-styles($primary-color, $text-light, $hover-color);
+    width: 100%;
+  }
+
+  @include tablet {
+    &__input {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+}

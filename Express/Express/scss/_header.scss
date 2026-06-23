@@ -1,0 +1,42 @@
+.header {
+  &__navbar {
+    background-color: $secondary-color !important;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  &__brand,
+  &__link {
+    color: $text-light !important;
+  }
+
+  &__link {
+    &:hover {
+      color: $accent-color !important;
+    }
+
+    &--disabled {
+      color: rgba(255, 255, 255, 0.5) !important;
+    }
+  }
+
+  &__search-btn {
+    color: $text-light !important;
+    border-color: $primary-color !important;
+    background-color: transparent !important;
+
+    &:hover {
+      color: $text-light !important;
+      background-color: $primary-color !important;
+      border-color: $primary-color !important;
+    }
+  }
+
+  @include tablet {
+    &__navbar {
+      margin: 5px;
+      padding: 5px;
+    }
+  }
+}

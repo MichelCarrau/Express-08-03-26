@@ -1,0 +1,22 @@
+.registro {
+  display: grid;
+  gap: 20px;
+
+  &__form {
+    display: grid;
+    gap: 15px;
+  }
+
+  &__label {
+    font-weight: bold;
+  }
+
+  &__input,
+  &__select {
+    @include input-styles;
+  }
+
+  &__button {
+    @include button-styles($primary-color, $text-light, $hover-color);
+  }
+}

@@ -1,0 +1,20 @@
+.footer {
+  background-color: $footer-bg;
+  color: $text-light;
+  padding: 20px;
+  text-align: center;
+
+  &__link {
+    color: $text-light;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @include mobile {
+    padding: 15px;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,33 @@
+.lista-guias {
+  overflow-x: auto;
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+  }
+
+  &__th,
+  &__td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid $border-color;
+    white-space: nowrap;
+  }
+
+  &__th {
+    background-color: $primary-color;
+    color: $text-light;
+  }
+
+  &__button {
+    margin-right: 5px;
+
+    @include mobile {
+      display: block;
+      width: 100%;
+      margin-bottom: 5px;
+      margin-right: 0;
+    }
+  }
+}

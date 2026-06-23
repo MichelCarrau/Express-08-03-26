@@ -1,0 +1,43 @@
+// Mixin para botones
+@mixin button-styles($bg-color, $text-color, $hover-bg) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: $button-padding;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $hover-bg;
+  }
+}
+
+// Mixin para inputs
+@mixin input-styles {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid $input-border;
+  border-radius: $border-radius;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+// Mixins para media queries
+@mixin mobile {
+  @media (max-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
