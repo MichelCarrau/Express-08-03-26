@@ -1,0 +1,48 @@
+/* src/index.css */
+@import './components/Header/Header.css';
+@import './components/Banner/Banner.css';
+@import './components/RegistroGuia/RegistroGuia.css';
+@import './components/EstadoGeneral/EstadoGeneral.css';
+@import './components/ListaGuias/ListaGuias.css';
+@import './components/ModalHistorial/ModalHistorial.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.estado-box {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.footer {
+  background-color: #2d3a3a;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer__link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer__link:hover {
+  text-decoration: underline;
+}
+
+.mensaje-flotante {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
