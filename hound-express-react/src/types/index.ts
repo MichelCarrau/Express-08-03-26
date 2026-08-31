@@ -20,13 +20,6 @@ export interface Guide {
 
 export type EstadoGuia = 'pendiente' | 'transito' | 'entregado';
 
-export interface EstadoGeneral {
-  activas: number;
-  enTransito: number;
-  entregadas: number;
-  total: number;
-}
-
 export interface FormData {
   numeroGuia: string;
   origen: string;
@@ -34,4 +27,16 @@ export interface FormData {
   destinatario: string;
   fechaCreacion: string;
   estado: EstadoGuia;
+}
+
+export interface EstadoGeneral {
+  activas: number;
+  enTransito: number;
+  entregadas: number;
+  total: number;
+}
+
+export interface Mensaje {
+  texto: string;
+  tipo: 'success' | 'danger' | 'info' | 'warning';
 }
