@@ -1,0 +1,23 @@
+﻿.banner {
+  text-align: center;
+  background-color: #6AC6DE;
+  color: #fff;
+  padding: 40px;
+}
+.banner__image-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.banner__image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+.banner__image:hover {
+  transform: scale(1.05);
+}

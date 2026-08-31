@@ -1,0 +1,12 @@
+﻿/* Estilos para el modal */
+.modal-content {
+  border-radius: 10px;
+}
+.modal-header {
+  background-color: #091E3F;
+  color: #fff;
+  border-radius: 10px 10px 0 0;
+}
+.modal-header .btn-close {
+  filter: brightness(0) invert(1);
+}

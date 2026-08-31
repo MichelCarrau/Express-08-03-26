@@ -1,0 +1,18 @@
+﻿.lista-guias {
+  overflow-x: auto;
+}
+.lista-guias__table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+.lista-guias__th, .lista-guias__td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+  white-space: nowrap;
+}
+.lista-guias__th {
+  background-color: #6AC6DE;
+  color: #fff;
+}
