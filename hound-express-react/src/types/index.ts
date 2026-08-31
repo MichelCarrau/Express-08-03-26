@@ -1,8 +1,6 @@
-// src/types/index.ts
-
-export interface HistoryEntry {
+﻿export interface HistoryEntry {
   id: number;
-  estado: 'pendiente' | 'transito' | 'entregado';
+  estado: "pendiente" | "transito" | "entregado";
   fecha: string;
 }
 
@@ -13,12 +11,12 @@ export interface Guide {
   destino: string;
   destinatario: string;
   fechaCreacion: string;
-  estado: 'pendiente' | 'transito' | 'entregado';
+  estado: "pendiente" | "transito" | "entregado";
   ultimaActualizacion: string;
   historial: HistoryEntry[];
 }
 
-export type EstadoGuia = 'pendiente' | 'transito' | 'entregado';
+export type EstadoGuia = "pendiente" | "transito" | "entregado";
 
 export interface FormData {
   numeroGuia: string;
@@ -38,5 +36,5 @@ export interface EstadoGeneral {
 
 export interface Mensaje {
   texto: string;
-  tipo: 'success' | 'danger' | 'info' | 'warning';
+  tipo: "success" | "danger" | "info" | "warning";
 }
