@@ -1,5 +1,5 @@
 ﻿import React, { useEffect, useState } from 'react';
-import { Guide } from '../../types';
+import type { Guide } from '../../types';
 
 interface EstadoGeneralProps {
   guias: Guide[];

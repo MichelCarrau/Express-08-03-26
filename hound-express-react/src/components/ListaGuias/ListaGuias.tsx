@@ -1,5 +1,5 @@
 ﻿import React, { useState } from 'react';
-import { Guide, EstadoGuia } from '../../types';
+import type { Guide, EstadoGuia } from '../../types';
 
 interface ListaGuiasProps {
   guias: Guide[];
@@ -35,8 +35,11 @@ const ListaGuias: React.FC<ListaGuiasProps> = ({ guias, onActualizarEstado }) =>
     const fecha = partes[0];
     const hora = partes[1] || '';
     if (fecha) {
-      const [año, mes, dia] = fecha.split('-');
-      return ${dia}// ;
+      const partesFecha = fecha.split('-');
+      const año = partesFecha[0];
+      const mes = partesFecha[1];
+      const dia = partesFecha[2];
+      return dia + '/' + mes + '/' + año + ' ' + hora;
     }
     return fechaStr;
   };
@@ -91,7 +94,7 @@ const ListaGuias: React.FC<ListaGuiasProps> = ({ guias, onActualizarEstado }) =>
                 <tr key={guia.id}>
                   <td className="lista-guias__td"><strong>{guia.numeroGuia}</strong></td>
                   <td className="lista-guias__td">
-                    <span className={adge }>
+                    <span className={'badge ' + getEstadoBadgeClass(guia.estado)}>
                       {getEstadoNombre(guia.estado)}
                     </span>
                   </td>
@@ -120,7 +123,6 @@ const ListaGuias: React.FC<ListaGuiasProps> = ({ guias, onActualizarEstado }) =>
         </table>
       </section>
 
-      {/* MODAL HISTORIAL */}
       {guiaSeleccionada && (
         <div className="modal show" style={{ display: 'block', backgroundColor: 'rgba(0,0,0,0.5)' }} tabIndex={-1}>
           <div className="modal-dialog modal-lg">
@@ -133,7 +135,7 @@ const ListaGuias: React.FC<ListaGuiasProps> = ({ guias, onActualizarEstado }) =>
                 <div className="mb-3">
                   <p><strong>Destinatario:</strong> {guiaSeleccionada.destinatario}</p>
                   <p><strong>Origen:</strong> {guiaSeleccionada.origen} → <strong>Destino:</strong> {guiaSeleccionada.destino}</p>
-                  <p><strong>Estado Actual:</strong> <span className={adge }>{getEstadoNombre(guiaSeleccionada.estado)}</span></p>
+                  <p><strong>Estado Actual:</strong> <span className={'badge ' + getEstadoBadgeClass(guiaSeleccionada.estado)}>{getEstadoNombre(guiaSeleccionada.estado)}</span></p>
                   <hr />
                 </div>
                 <h6>Registro de Cambios:</h6>
@@ -146,7 +148,7 @@ const ListaGuias: React.FC<ListaGuiasProps> = ({ guias, onActualizarEstado }) =>
                       {guiaSeleccionada.historial.map((entry, index) => (
                         <tr key={entry.id}>
                           <td>{index + 1}</td>
-                          <td><span className={adge }>{getEstadoNombre(entry.estado)}</span></td>
+                          <td><span className={'badge ' + getEstadoBadgeClass(entry.estado)}>{getEstadoNombre(entry.estado)}</span></td>
                           <td>{entry.fecha}</td>
                         </tr>
                       ))}

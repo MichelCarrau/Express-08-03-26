@@ -4,7 +4,7 @@ import Banner from './components/Banner/Banner';
 import RegistroGuia from './components/RegistroGuia/RegistroGuia';
 import EstadoGeneral from './components/EstadoGeneral/EstadoGeneral';
 import ListaGuias from './components/ListaGuias/ListaGuias';
-import { Guide, EstadoGuia } from './types';
+import type { Guide, EstadoGuia } from './types';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
@@ -70,19 +70,19 @@ function App() {
 
   const obtenerFechaHoraActual = (): string => {
     const ahora = new Date();
-    const año = ahora.getFullYear();
+    const anio = ahora.getFullYear();
     const mes = String(ahora.getMonth() + 1).padStart(2, '0');
     const dia = String(ahora.getDate()).padStart(2, '0');
     const horas = String(ahora.getHours()).padStart(2, '0');
     const minutos = String(ahora.getMinutes()).padStart(2, '0');
     const segundos = String(ahora.getSeconds()).padStart(2, '0');
-    return ${año}-- ::;
+    return anio + '-' + mes + '-' + dia + ' ' + horas + ':' + minutos + ':' + segundos;
   };
 
   const handleRegistrar = (datos: Omit<Guide, 'id' | 'ultimaActualizacion' | 'historial'>) => {
     const existe = guias.some(g => g.numeroGuia === datos.numeroGuia);
     if (existe) {
-      mostrarMensaje(El número de guía "" ya está registrado., 'danger');
+      mostrarMensaje('El número de guía "' + datos.numeroGuia + '" ya está registrado.', 'danger');
       return;
     }
 
@@ -95,7 +95,7 @@ function App() {
     };
 
     setGuias([...guias, nuevaGuia]);
-    mostrarMensaje(Guía  registrada exitosamente., 'success');
+    mostrarMensaje('Guía ' + datos.numeroGuia + ' registrada exitosamente.', 'success');
   };
 
   const handleActualizarEstado = (id: number) => {
@@ -129,7 +129,7 @@ function App() {
       'transito': 'En Tránsito',
       'entregado': 'Entregado'
     };
-    mostrarMensaje(Guía  actualizada a ""., 'success');
+    mostrarMensaje('Guía ' + guia.numeroGuia + ' actualizada a "' + nombresEstados[nuevoEstado] + '".', 'success');
   };
 
   return (
@@ -138,7 +138,7 @@ function App() {
       <Banner />
 
       {mensaje && (
-        <div className={lert alert- alert-dismissible fade show mensaje-flotante} style={{ position: 'fixed', top: '20px', right: '20px', zIndex: 9999, maxWidth: '400px', boxShadow: '0 4px 8px rgba(0,0,0,0.2)' }}>
+        <div className={'alert alert-' + mensaje.tipo + ' alert-dismissible fade show mensaje-flotante'} style={{ position: 'fixed', top: '20px', right: '20px', zIndex: 9999, maxWidth: '400px', boxShadow: '0 4px 8px rgba(0,0,0,0.2)' }}>
           {mensaje.texto}
           <button type="button" className="btn-close" onClick={() => setMensaje(null)}></button>
         </div>
@@ -164,11 +164,11 @@ function App() {
                   }
                   const encontrada = guias.find(g => g.numeroGuia === numero);
                   if (encontrada) {
-                    mostrarMensaje(Guía  encontrada., 'success');
+                    mostrarMensaje('Guía ' + numero + ' encontrada.', 'success');
                     setGuias([encontrada]);
                     setTimeout(() => setGuias(guias), 3000);
                   } else {
-                    mostrarMensaje(No se encontró ninguna guía con el número ""., 'danger');
+                    mostrarMensaje('No se encontró ninguna guía con el número "' + numero + '".', 'danger');
                   }
                   input.value = '';
                 }}>Buscar</button>

@@ -1,5 +1,5 @@
 ﻿import React, { useState } from 'react';
-import { Guide, EstadoGuia } from '../../types';
+import type { Guide, EstadoGuia } from '../../types';
 
 interface RegistroGuiaProps {
   onRegistrar: (datos: Omit<Guide, 'id' | 'ultimaActualizacion' | 'historial'>) => void;
